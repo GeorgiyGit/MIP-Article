@@ -1,0 +1,33 @@
+# Ignore LaTeX intermediate and log files
+*.aux
+*.bbl
+*.blg
+*.log
+*.out
+*.toc
+*.lof
+*.lot
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.synctex(busy)
+*.nav
+*.snm
+*.vrb
+*.dvi
+
+# Ignore editor backup files
+*~
+.#*
+*.swp
+*.swo
+*.bak
+
+# Ignore OS-generated files
+.DS_Store
+Thumbs.db
+
+# Ignore PDF and PostScript files
+*.pdf
+*.ps
+*.eps
