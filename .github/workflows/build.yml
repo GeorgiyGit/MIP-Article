@@ -19,7 +19,7 @@ jobs:
       - name: Compile LaTeX document
         uses: xu-cheng/latex-action@v3
         with:
-          root_file: clanok.tex
+          root_file: article.tex
       - name: Upload PDF file
         uses: actions/upload-artifact@v4
         with:
