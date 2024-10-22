@@ -20,8 +20,16 @@ jobs:
         uses: xu-cheng/latex-action@v3
         with:
           root_file: article.tex
-      - name: Upload PDF file
-        uses: actions/upload-artifact@v4
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v3
         with:
-          name: PDF
-          path: builds/article.pdf
+          name: draft.pdf
+          path: article.pdf
+        
+      - name: Upload to release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: article.pdf
+          tag_name: auto_build_draft
+          name: Auto build draft
