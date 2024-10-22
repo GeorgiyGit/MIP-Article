@@ -30,18 +30,19 @@
 \begin{document}
 
 \maketitle
+\tableofcontents
 
-\begin{abstract}
-\ldots
-\end{abstract}
+\input{sections/abstract.tex}
+\input{sections/introduction.tex}
+\input{sections/cbf_types.tex}
+\input{sections/cbf_data_representation.tex}
+\input{sections/cbf_advantages_disadvantages.tex} %TODO : temp, could be removed
+\input{sections/cbf_comparison.tex}
+\input{sections/usecases.tex}
+\input{sections/conclusion.tex}
 
-\section{Iná časť} \label{ina}
+\nocite{*} %TODO : temp
 
-Základným problémom je teda\ldots{} Najprv sa pozrieme na nejaké vysvetlenie (časť~\ref{ina:nejake}), a potom na ešte nejaké (časť~\ref{ina:nejake}).\footnote{Niekedy môžete potrebovať aj poznámku pod čiarou.}
-
-Môže sa zdať, že problém vlastne nejestvuje\cite{Coplien:MPD}, ale bolo dokázané, že to tak nie je~\cite{Czarnecki:Staged, Czarnecki:Progress}. Napriek tomu, aj dnes na webe narazíme na všelijaké pochybné názory\cite{PLP-Framework}. Dôležité veci možno \emph{zdôrazniť kurzívou}.
-
-% týmto sa generuje zoznam literatúry z obsahu súboru literatura.bib podľa toho, na čo sa v článku odkazujete
 \bibliography{bibliography/references}
 \bibliographystyle{plain}
 \end{document}
