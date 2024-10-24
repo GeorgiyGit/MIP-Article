@@ -1,6 +1,6 @@
 % Metódy inžinierskej práce
 
-\documentclass[10pt,twoside,slovak,a4paper]{article}
+\documentclass{article}
 
 \usepackage[slovak]{babel}
 %\usepackage[T1]{fontenc}
@@ -9,6 +9,7 @@
 \usepackage{graphicx}
 \usepackage{url} % príkaz \url na formátovanie URL
 \usepackage{hyperref} % odkazy v texte budú aktívne (pri niektorých triedach dokumentov spôsobuje posun textu)
+\usepackage{enumitem}  % For adjusting list spacing
 
 \usepackage{cite}
 %\usepackage{times}
@@ -32,6 +33,7 @@
 \maketitle
 \tableofcontents
 
+\input{sections/reference-papers.tex} %TODO : temp, only for development
 \input{sections/abstract.tex}
 \input{sections/introduction.tex}
 \input{sections/cbf_types.tex}
