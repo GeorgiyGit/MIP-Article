@@ -1,5 +1,18 @@
 \section{Types of content-based filtering}\label{sec:cbf_types}
+Content-based filtering could be used in a variety of contexts. Depending on the needs of a recommendation system we could have different implementations of CBF. Depending on data type, it comonly used models include Term frequency–inverse document frequency (TF-IDF)\cite{TF_IDF}, Naive Bayes classifier \cite{Naive_classifier}, k-Nearest Neighbors or neural networks. The most popular and widely methods are based on vector 
 
-\subsection{Text-based CBF} %TODO
+\subsection{Decision-tree method}
+Decision-tree could be used not only with content-based filtering, but also with other recommendation methods. It is not really popular due to several reasons, but could have advantages in specific situations. Decision-tree method relies on inductive learning, therefore we firstly should have some data from the user (his preferences or previous actions). After that, we could use algorithms like C4.5\cite{C4_5} or newer version C5.0. Given algorithm will produce a decision tree based on user preferences and it will be used as a user profile. The example of a decision tree is shown in Figure 1\cite{Decision_Tree}.
 
-\subsection{Multimedia-based CBF} %TODO
+After construction of the decision tree, we can classify new items, with which the user has not yet interacted. If the item has similar categories (this approach could be used only if items have some sort of categorization) to those which are preferable to user profile, the output of the decision tree for these items would be abstract “Like”. This will mean that we could recommend a new item to a user with a high probability that this item will interest the user. The decision tree can be reconstructed during the process of interacting with new content which will improve the recommendation results.
+
+However, this algorithm has some disadvantages. Firstly, the computational complexity of C4.5 during the training data is $\mathbf{O(m^2)}$. For a small amount of data it wouldn't be a problem, but if the user is interacting with thousands of items, rebuilding the decision tree won't be a trivial task. Computational cost during the recommendation process is $\mathbf{O(n)}$, which also could be a problem with high amounts of presented items\cite{Decision_Tree}.
+\begin{center}
+    \begin{figure}[H]
+    \includegraphics[width=\textwidth]{figures/diagrams/article_decision_tree.pdf}
+    \caption{Figure 1. Example of decision-tree}
+    \label{fig:decision_tree}
+    \end{figure}
+\end{center}
+
+\subsection{Vector space techniques}
