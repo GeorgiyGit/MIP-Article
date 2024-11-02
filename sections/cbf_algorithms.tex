@@ -1,11 +1,80 @@
 \section{Algorithms for content-based filtering}\label{sec:cbf_algorithms}
+Content-based filtering could be used in a variety of contexts. Depending on the needs of a recommendation system we could have different implementations of CBF. Depending on data type, it comonly used models include Term frequency–inverse document frequency (TF-IDF)\cite{TF_IDF}, Naive Bayes classifier \cite{Naive_classifier}, k-Nearest Neighbors or neural networks. The most popular and widely methods are based on vector 
 
-\subsection{K-Nearest neighbors} %TODO
+\subsection{Decision-tree method}
+Decision-tree could be used not only with content-based filtering, but also with other recommendation methods. It is not really popular due to several reasons, but could have advantages in specific situations. Decision-tree method relies on inductive learning, therefore we firstly should have some data from the user (his preferences or previous actions). After that, we could use algorithms like C4.5\cite{C4_5} or newer version C5.0. Given algorithm will produce a decision tree based on user preferences and it will be used as a user profile. The example of a decision tree is shown in Figure~\ref{fig:decision_tree}\cite{Decision_Tree}.
 
-\subsection{Naive Bayes Classifier} %TODO
+After construction of the decision tree, we can classify new items, with which the user has not yet interacted. If the item has similar categories (this approach could be used only if items have some sort of categorization) to those which are preferable to user profile, the output of the decision tree for these items would be abstract “Like”. This will mean that we could recommend a new item to a user with a high probability that this item will interest the user. The decision tree can be reconstructed during the process of interacting with new content which will improve the recommendation results.
 
-\subsection{Decision trees} %TODO
+However, this algorithm has some disadvantages. Firstly, the computational complexity of C4.5 during the training data is $\mathbf{O(m^2)}$. For a small amount of data it wouldn't be a problem, but if the user is interacting with thousands of items, rebuilding the decision tree won't be a trivial task. Computational cost during the recommendation process is $\mathbf{O(n)}$, which also could be a problem with high amounts of presented items\cite{Decision_Tree}.
+\begin{center}
+    \begin{figure}[H]
+    \includegraphics[width=\textwidth]{figures/diagrams/article_decision_tree.pdf}
+    \caption{Example of decision-tree}
+    \label{fig:decision_tree}
+    \end{figure}
+\end{center}
 
-\subsection{TF-IDF and cosine similarity} %TODO
+\subsection{K-Nearest Neighbor method}
+K-Nearest Neighbor (KNN) belongs to vector space methods that are used in N dimensional environments (see section 3 for more details). It is highly used and has better results than decision-tree in the majority of data sets\cite{KNN}.
 
-\subsection{Deep learning approaches} %TODO
+But before using KNN, we should collect data from user interactions (e.g. user likes) into a user-item matrix. The example of the user-item matrix is shown in Figure 2. In example, user has different amount of 
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|c|c|c|c|c|}
+        \hline
+        \textbf{Users} & \textbf{Movie 1} & \textbf{Movie 2} & \textbf{Movie 3} & \textbf{Movie 4} \\        
+        \hline
+        User 1 & 3 & 0 & 1 & 2\\
+        \hline
+        User 2 & 0 & 5 & 5 & 3\\
+        \hline
+        User 3 & 5 & 1 & 1 & 2\\
+        \hline
+        User 4 & 0 & 0 & 5 & 0\\
+        \hline
+    \end{tabular}
+    \caption{User-item matrix}\label{tab:user_item_matrix}
+\end{table}
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|c|c|c|c|c|}
+        \hline
+        \textbf{Genres} & \textbf{Movie 1} & \textbf{Movie 2} & \textbf{Movie 3} & \textbf{Movie 4} \\        
+        \hline
+        Action  & 1 & 0 & 0 & 1\\
+        \hline
+        Romance & 0 & 1 & 1 & 0\\
+        \hline
+        Comedy  & 1 & 1 & 1 & 0\\
+        \hline
+        Horror  & 0 & 0 & 0 & 1\\
+        \hline
+    \end{tabular}
+    \caption{Genre-movie matrix}\label{tab:genre_movie_matrix}
+\end{table}
+
+\newcommand{\cosinesimilarity}{%
+    \begin{equation}
+    \text{similarity} = \cos(\theta) = \frac{\vec{A} \cdot \vec{B}}{||\vec{A}|| \times ||\vec{B}||} = \frac{\sum_{i=1}^{n} A_i B_i}{\sqrt{\sum_{i=1}^{n} A_i^2} \times \sqrt{\sum_{i=1}^{n} B_i^2}}
+    \end{equation}
+}
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|c|c|c|c|c|}
+        \hline
+         & Movie 1 & Movie 2 & Movie 3 & Movie 4 \\        
+        \hline
+        Movie 1 &1		&0.5	&0.5	&0.5\\
+        \hline	
+        Movie 2 &0.5	&1      &1		&0	\\
+        \hline
+        Movie 3 &0.5	&1		&1		&0	\\
+        \hline
+        Movie 4 &0.5	&0		&0		&1	\\
+        \hline
+    \end{tabular}
+    \caption{Cosine similarity matrix}\label{tab:cosine_similarity_matrix}
+\end{table}
