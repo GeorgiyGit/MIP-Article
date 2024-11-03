@@ -1,0 +1,53 @@
+% Metódy inžinierskej práce
+
+\documentclass{article}
+
+%\usepackage[T1]{fontenc}
+\usepackage[IL2]{fontenc} % lepšia sadzba písmena Ľ než v T1
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{url} % príkaz \url na formátovanie URL
+\usepackage{hyperref} % odkazy v texte budú aktívne (pri niektorých triedach dokumentov spôsobuje posun textu)
+\usepackage{enumitem}  % For adjusting list spacing
+\usepackage{indentfirst}
+\usepackage{amsmath}
+\usepackage{float}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{multicol}
+\usepackage{xcolor}
+
+\usepackage{cite}
+%\usepackage{times}
+\usepackage{caption}
+\captionsetup{labelsep=period}
+
+\pagestyle{headings}
+
+\title{Content-based filtering\thanks{Semester project in the subject Methods of engineering work. Year 2024/25, supervision: Pavol Baťalík}}
+
+\author{Sladkovskyi Heorhii\\[2pt]
+	{\small Slovak University of Technology in Bratislava}\\
+	{\small Faculty of Informatics and Information Technologies STU in Bratislava}\\
+	{\small \texttt{xsladkovskyi@stuba.sk}}
+	}
+
+\date{\small 3. november 2024}
+
+\begin{document}
+
+\maketitle
+
+\input{sections/abstract.tex}
+\input{sections/introduction.tex}
+%\input{sections/cbf_data_representation.tex} TODO : could be removed
+\input{sections/cbf_algorithms.tex}
+\input{sections/cbf_algorithms_analysis.tex}
+\input{sections/cbf_advantages_disadvantages.tex}
+\input{sections/conclusion.tex}
+
+\bibliography{bibliography/references}
+\bibliographystyle{unsrt}
+\end{document}
