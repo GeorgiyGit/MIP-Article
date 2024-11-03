@@ -63,19 +63,6 @@ pages="1--11",
 abstract="In this paper we aim to explore and implement hybrid recommendation system using collaborative and content based recommendation system that can be applied to repairs marketplace. We developed multiple variants of proposed hybrid recommendation system architecture and compared their performance with a metric called hit rate. Furthermore, we discussed about data preparation and mathematical explanation of the machine learning models we used for hybrid recommendation system. To achieve this we used different python frameworks used for natural language processing and recommendation systems.",
 isbn="978-3-031-28076-4"
 }
-@Inbook{TF_IDF,
-editor="Sammut, Claude
-and Webb, Geoffrey I.",
-title="TF--IDF",
-bookTitle="Encyclopedia of Machine Learning",
-year="2010",
-publisher="Springer US",
-address="Boston, MA",
-pages="986--987",
-isbn="978-0-387-30164-8",
-doi="10.1007/978-0-387-30164-8_832",
-url="https://doi.org/10.1007/978-0-387-30164-8_832"
-}
 @Inbook{Naive_classifier,
 author="Schonlau, Matthias",
 title="The Naive Bayes Classifier",
@@ -114,6 +101,15 @@ url={https://doi.org/10.1007/BF00993309}
   keywords={Motion pictures;Recommender systems;Large-scale systems;Decision trees;Intelligent systems;Information systems;Collaboration;Information filtering;Information filters;Information resources},
   doi={10.1109/ICCIS.2004.1460433}
 }
+@misc{Dataset,
+	author = {Ziegler, Cai-Nicolas},
+	title = {{Book Crossing}},
+	year = {2004},
+  publisher = {Datasets-for-Recommender-Systems Repository},
+  url={https://github.com/caserec/Datasets-for-Recommender-Systems/blob/4180b4dc4103452c591a1718560d29bdf1f48540/Processed%20Datasets/BookCrossing/book_crossing.zip},
+  note={Datasets-for-Recommender-Systems Repository}
+}
+
 @INPROCEEDINGS{KNN,
   author={Sawant, Aparna and Kunekar, Pankaj and Taywade, Rutuja and Tiwari, Abhishek and Sharma, Rohit and Shinde, Mayur and Roy, Ayushi},
   booktitle={2023 5th Biennial International Conference on Nascent Technologies in Engineering (ICNTE)}, 
@@ -124,4 +120,107 @@ url={https://doi.org/10.1007/BF00993309}
   pages={1-6},
   keywords={Data analysis;Filtering;Films;Stars;Filtering algorithms;Motion pictures;Prediction algorithms;Content-Based Filtering;Collaborative-Based Filtering;KNN},
   doi={10.1109/ICNTE56631.2023.10146638}
+}
+@Article{Different_KNN_distances,
+author={Ali, Najat
+and Neagu, Daniel
+and Trundle, Paul},
+title={Evaluation of k-nearest neighbour classifier performance for heterogeneous data sets},
+journal={SN Applied Sciences},
+year={2019},
+month={Nov},
+day={06},
+volume={1},
+number={12},
+pages={1559},
+abstract={Distance-based algorithms are widely used for data classification problems. The k-nearest neighbour classification (k-NN) is one of the most popular distance-based algorithms. This classification is based on measuring the distances between the test sample and the training samples to determine the final classification output. The traditional k-NN classifier works naturally with numerical data. The main objective of this paper is to investigate the performance of k-NN on heterogeneous datasets, where data can be described as a mixture of numerical and categorical features. For the sake of simplicity, this work considers only one type of categorical data, which is binary data. In this paper, several similarity measures have been defined based on a combination between well-known distances for both numerical and binary data, and to investigate k-NN performances for classifying such heterogeneous data sets. The experiments used six heterogeneous datasets from different domains and two categories of measures. Experimental results showed that the proposed measures performed better for heterogeneous data than Euclidean distance, and that the challenges raised by the nature of heterogeneous data need personalised similarity measures adapted to the data characteristics.},
+issn={2523-3971},
+doi={10.1007/s42452-019-1356-9},
+url={https://doi.org/10.1007/s42452-019-1356-9}
+}
+
+@Inbook{Cosine_Similarity,
+author="Wegner, Sven A.",
+title="k-Nearest Neighbors",
+bookTitle="Mathematical Introduction to Data Science",
+year="2024",
+publisher="Springer Berlin Heidelberg",
+address="Berlin, Heidelberg",
+pages="35--50",
+abstract="Given a metric space and a labeled dataset within it, we discuss several algorithms based on the concept of k-nearest neighbors. These include the k-NN classifier with majority vote and the k-NN regressor with arithmetic mean. The effect of overfitting is illustrated via several examples. We introduce some preprocessing methods and then generalize the initially mentioned setting of metric spaces to distance measures in order to include cosine similarity and cosine distance into our theory. As examples, we discuss text mining, product reviews, and handwriting recognition.",
+isbn="978-3-662-69426-8",
+doi="10.1007/978-3-662-69426-8_3",
+url="https://doi.org/10.1007/978-3-662-69426-8_3"
+}
+@InProceedings{KNN_complexity,
+author="Ray, Susmita",
+editor="Sharma, Neha
+and Chakrabarti, Amlan
+and Balas, Valentina  Emilia
+and Martinovic, Jan",
+title="An Analysis of Computational Complexity and Accuracy of Two Supervised Machine Learning Algorithms---K-Nearest Neighbor and Support Vector Machine",
+booktitle="Data Management, Analytics and Innovation",
+year="2021",
+publisher="Springer Singapore",
+address="Singapore",
+pages="335--347",
+abstract="K-Nearest Neighbor (KNN) and Support Vector Machine (SVM) are the two Supervised Machine Learning Algorithms which have been used extensively in solving classification and regression problems in various application domains---medical diagnosis, pattern recognition, and image classification being the popular ones. KNN has been attractive for its simplicity---SVM has been considered as complex. Computational complexity of KNN is less compared to SVM. However, accuracy of SVM in general has been higher compared to KNN. This paper carries out an analysis of complexity of KNN and SVM and then looks at the alternative strategies to reduce the complexity. Accuracies of both SVM and KNN are analyzed from literature survey of experimental results with different training datasets. Reduction of number of training instances and usage of kernel functions are found to be the solutions for reducing SVM complexity. Factors impacting KNN accuracy are analyzed and possible alternatives are assessed. Kernel functions and distance-weighted KNN are concluded as the solution to improve KNN accuracy to compete with SVM accuracy. To utilize the best potential of the two algorithms, the option of a hybrid algorithm combining both KNN and SVM is also proposed.",
+isbn="978-981-15-5616-6"
+}
+@Article{KNN_modifications,
+author={Halder, Rajib Kumar
+and Uddin, Mohammed Nasir
+and Uddin, Md. Ashraf
+and Aryal, Sunil
+and Khraisat, Ansam},
+title={Enhancing K-nearest neighbor algorithm: a comprehensive review and performance analysis of modifications},
+journal={Journal of Big Data},
+year={2024},
+month={Aug},
+day={11},
+volume={11},
+number={1},
+pages={113},
+abstract={The k-Nearest Neighbors (kNN) method, established in 1951, has since evolved into a pivotal tool in data mining, recommendation systems, and Internet of Things (IoT), among other areas. This paper presents a comprehensive review and performance analysis of modifications made to enhance the exact kNN techniques, particularly focusing on kNN Search and kNN Join for high-dimensional data. We delve deep into 31 kNN search methods and 12 kNN join methods, providing a methodological overview and analytical insight into each, emphasizing their strengths, limitations, and applicability. An important feature of our study is the provision of the source code for each of the kNN methods discussed, fostering ease of experimentation and comparative analysis for readers. Motivated by the rising significance of kNN in high-dimensional spaces and a recognized gap in comprehensive surveys on exact kNN techniques, our work seeks to bridge this gap. Additionally, we outline existing challenges and present potential directions for future research in the domain of kNN techniques, offering a holistic guide that amalgamates, compares, and dissects existing methodologies in a coherent manner.},
+issn={2196-1115},
+doi={10.1186/s40537-024-00973-y},
+url={https://doi.org/10.1186/s40537-024-00973-y}
+}
+
+@inbook{CBF_Advantages,
+author = {Anand, Poonam Bhatia and Nath, Rajender},
+publisher = {John Wiley \& Sons, Ltd},
+isbn = {9781119711582},
+title = {Content-Based Recommender Systems},
+booktitle = {Recommender System with Machine Learning and Artificial Intelligence},
+chapter = {9},
+pages = {165-195},
+doi = {https://doi.org/10.1002/9781119711582.ch9},
+url = {https://onlinelibrary.wiley.com/doi/abs/10.1002/9781119711582.ch9},
+eprint = {https://onlinelibrary.wiley.com/doi/pdf/10.1002/9781119711582.ch9},
+year = {2020},
+keywords = {Content-based recommender system, item representation, profile cleaner, learning user profiles, probability method, Rocchio's algorithm, application of recommender system in agriculture and health sector},
+abstract = {Summary Recommender System guides the users to choose objects from variety of possible options in personalized manner. Broadly, there are two categories of recommender systems i.e. content based and collaborative filtering based. These systems suggest the items based on the interest of the customers in the past. They personalize the information by using relevant information. These systems are used in various domains like recommending movies, products to purchase, restaurants, places to visit, etc. This chapter deliberates the concepts of content-based recommender systems by including distinct features in their design and implementation. High level architecture and applications of these systems in various domains are also presented in this chapter.}
+}
+@misc{CBF_Disadvantages,
+  title={Collaborative Filtering vs. Content-Based Filtering: differences and similarities}, 
+  author={Rafael Glauber and Angelo Loula},
+  year={2019},
+  eprint={1912.08932},
+  archivePrefix={arXiv},
+  primaryClass={cs.IR},
+}
+@article{Hybrid_recom_systems,
+author = {Dashti, Seyed Ebrahim and Sarafraz, Maryam},
+title = {Hybrid recommender system based on fuzzy neural algorithm},
+journal = {Concurrency and Computation: Practice and Experience},
+volume = {33},
+number = {24},
+pages = {e6473},
+keywords = {advisory systems, apriori, associative rules},
+doi = {https://doi.org/10.1002/cpe.6473},
+url = {https://onlinelibrary.wiley.com/doi/abs/10.1002/cpe.6473},
+eprint = {https://onlinelibrary.wiley.com/doi/pdf/10.1002/cpe.6473},
+abstract = {Abstract The internet has provided much information to the users, and the huge amount of information has caused the overhead information problem so that recommender systems, as a solution by recommending related items, try to find the users favorite items. Most recommender systems recommend specific items based on user profile settings and past privileges. Various approaches, such as collaborative refinement and content-based refinement, are used to build the recommender system. The proposed framework utilizes popular and unpopular user-specific items and is built on the integration of the fuzzy neural network associative exploration approach (Anfis) with a collaborative refinement approach. This study proposes a hybrid recommender system that provides two-dimensional space (user * Item) ancillary information to reflect users' preferences and items. Experimental results from experiments on the actual Movielens 1 m 6040 dataset and 3952 videos show that the mean error (MAE) of 2.79 compared to other low-resolution methods also predicts a correct percentage of 21.75 to other windshields. Besides, experimental results show higher precision of the proposed system comparing to the former recommender systems.},
+year = {2021}
 }
