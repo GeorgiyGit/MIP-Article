@@ -2,7 +2,6 @@
 
 \documentclass{article}
 
-\usepackage[slovak]{babel}
 %\usepackage[T1]{fontenc}
 \usepackage[IL2]{fontenc} % lepšia sadzba písmena Ľ než v T1
 \usepackage[utf8]{inputenc}
@@ -10,9 +9,20 @@
 \usepackage{url} % príkaz \url na formátovanie URL
 \usepackage{hyperref} % odkazy v texte budú aktívne (pri niektorých triedach dokumentov spôsobuje posun textu)
 \usepackage{enumitem}  % For adjusting list spacing
+\usepackage{indentfirst}
+\usepackage{amsmath}
+\usepackage{float}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{multicol}
+\usepackage{xcolor}
 
 \usepackage{cite}
 %\usepackage{times}
+\usepackage{caption}
+\captionsetup{labelsep=period}
 
 \pagestyle{headings}
 
@@ -24,27 +34,20 @@
 	{\small \texttt{xsladkovskyi@stuba.sk}}
 	}
 
-\date{\small 3. october 2024}
-
-
+\date{\small 3. november 2024}
 
 \begin{document}
 
 \maketitle
-\tableofcontents
 
-\input{sections/reference-papers.tex} %TODO : temp, only for development
 \input{sections/abstract.tex}
 \input{sections/introduction.tex}
-\input{sections/cbf_types.tex}
-\input{sections/cbf_data_representation.tex}
-\input{sections/cbf_advantages_disadvantages.tex} %TODO : temp, could be removed
-\input{sections/cbf_comparison.tex}
-\input{sections/usecases.tex}
+%\input{sections/cbf_data_representation.tex} TODO : could be removed
+\input{sections/cbf_algorithms.tex}
+\input{sections/cbf_algorithms_analysis.tex}
+\input{sections/cbf_advantages_disadvantages.tex}
 \input{sections/conclusion.tex}
 
-\nocite{*} %TODO : temp
-
 \bibliography{bibliography/references}
-\bibliographystyle{plain}
+\bibliographystyle{unsrt}
 \end{document}
