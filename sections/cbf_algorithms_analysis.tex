@@ -4,7 +4,20 @@
 The analysis will be conducted on Book Crossing dataset collected by Cai-Nicolas Ziegler and edited by Arthur Forte \cite{Dataset}. The dataset contains 272,679 interactions from 2,946 users on 17,384 books. The users with less than 10 interactions were deleted from the original dataset by Arthur Forte, therefore there are no users with small amount of iterations.
 
 \subsection{Evaluation Metrics} %TODO
+For the metrics F1 Score and Root mean square error (RMSE) is used. Additionally, build time and prediction time is measured. We analyse maximum build and prediction time and prediction time is measured not for one item, but for the collection of items related to one user, therefore the values could be high. Also, the analysis is prepared in a test environment, real applications use some optimization techniques that greatly reduce the time.
 
-\subsection{Experimental Setup} %TODO
+F1 Score is calculated using Equation \eqref{equ:f1_score}, additional elements illustrated in Equations \eqref{equ:f1_precision_recall}. The formula contains of 3 main values: number of true positive, false positive and false negative results. Prediction is better if the F1 Score is closer to 1 \cite{F1Score}.The dataset has ratings from 1 to 10, therefore we use F1 weighted Score. For a better analysis, we calculate two F1 scores, one using ratings 1 to 10 and second placing each rating into three groups: “Low” (1-3), “Middle” (4-6) and “High” (7-10). It is nearly impossible to predict rating from 1 to 10, but with group diving the results are much better.
+\begin{equation}
+        \text{F1 Score} = \frac{2 \cdot \text{precision} \cdot \text{recall}}{\text{precision} + \text{recall}}\label{equ:f1_score}
+\end{equation}
+\begin{align}
+        &\text{precision} = \frac{\text{TP}}{\text{TP} + \text{FP}} &
+        \text{recall} = \frac{\text{TP}}{\text{TP} + \text{FN}} &\label{equ:f1_precision_recall}
+\end{align}
 
+RMSE formula is illustrated in Equation \eqref{equ:rmse}. We also measure two RMSE values, one with 1 to 10 rating (10 categories) and the other with three groups. Comparing to F1 Score, RMSE prediction is better if RMSE value is closer to zero.
+\begin{equation}
+    \text{RMSE} = \sqrt{\frac{1}{n} \sum_{i=1}^n (y_i - \hat{y}_i)^2}\label{equ:rmse}
+\end{equation}
 \subsection{Results} %TODO
+The results are illustrated in table 1. 
