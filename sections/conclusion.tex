@@ -1,2 +1,8 @@
 \section{Conclusion}\label{sec:conclusion}
-\newpage
+This study presents a comparative analysis of Content-Based Filtering (CBF) algorithms, specifically focusing on Decision Tree (C4.5) and K-Nearest Neighbor (KNN) with different distance metrics, using the Book Crossing dataset. The analysis was performed under two output settings: 10 categories (ratings 1-10) and 3 categories (grouped ratings), with F1 Score and Root Mean Square Error (RMSE) as the performance metrics.
+
+The results demonstrate that dividing ratings into 3 categories significantly improve the predicted performance of all algorithms. From all tested methods, KNN with Manhattan distance achieved the highest F1 Score (0.863) and the lowest RMSE (0.287) in the 3 category output. Similarly, Decision tree (C4.5) performed well, having F1 Score (0.858) and RSME (0.3).
+
+On the other hand, KNN with Minkowski distance have results not better than random prediction. Additionally, KNN with Hellinger, Minkowski and Levenshtein distances have weaker performance for the used dataset. Furthermore, the analysis of computational efficiency revealed that Decision Tree (C4.5), despite a higher build time, offered faster prediction times, making it advantageous for real-time recommendation. On the other hand, KNN algorithm has smaller trained time, but slower predicting especially with complex distance metrics.
+
+Considering overall Content-Based Filtering, it is scalable to a large number of customers,  can recommend specific unpopular items and recommends items immediately. On the other hand, there is a “cold start” problem and CBF couldn't generate relevant content to non-active users. Hybrid system reduces disadvantages of a Content-Based Filtering combining this method with the others.
