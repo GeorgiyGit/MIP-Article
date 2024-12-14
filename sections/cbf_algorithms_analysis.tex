@@ -6,7 +6,7 @@ The analysis will be conducted on Book Crossing dataset collected by Cai-Nicolas
 \subsection{Evaluation Metrics} %TODO
 For the metrics F1 Score and Root mean square error (RMSE) is used. Additionally, build time and prediction time is measured. We analyse maximum build and prediction time and prediction time is measured not for one item, but for the collection of items related to one user, therefore the values could be high. Also, the analysis is prepared in a test environment, real applications use some optimization techniques that greatly reduce the time.
 
-F1 Score is calculated using Equation \eqref{equ:f1_score}, additional elements illustrated in Equations \eqref{equ:f1_precision_recall}. The formula consists of 3 main values: number of true positive, false positive and false negative results. Prediction is better if the F1 Score is closer to 1 \cite{F1Score}. The dataset has ratings from 1 to 10, therefore we use F1 weighted Score. For a better analysis, we calculate two F1 scores, one using ratings 1 to 10 and second placing each rating into three groups: “Low” (1-3), “Middle” (4-6) and “High” (7-10). It is nearly impossible to predict rating from 1 to 10, but with group diving the results are much better.
+F1 Score is calculated using Equation \eqref{equ:f1_score}, additional elements illustrated in Equations \eqref{equ:f1_precision_recall}. The formula consists of 3 main values: number of true positive, false positive and false negative results. Prediction is better if the F1 Score is closer to 1 \cite{F1Score}. The dataset has ratings from 1 to 10, therefore we use F1 weighted score. For a better analysis, we calculate two F1 scores, one using ratings 1 to 10 and second placing each rating into three groups: “Low” (1-3), “Middle” (4-6) and “High” (7-10). It is nearly impossible to predict rating from 1 to 10, but with group diving the results are much better.
 \begin{equation}
         \text{F1 Score} = \frac{2 \cdot \text{precision} \cdot \text{recall}}{\text{precision} + \text{recall}}\label{equ:f1_score}
 \end{equation}
@@ -19,12 +19,12 @@ RMSE formula is illustrated in Equation \eqref{equ:rmse}. We also measure two RM
 \begin{equation}
     \text{RMSE} = \sqrt{\frac{1}{n} \sum_{i=1}^n (y_i - \hat{y}_i)^2}\label{equ:rmse}
 \end{equation}
-\subsection{Results} %TODO
+\subsection{Results}
 The score results are illustrated in Table \ref{tab:analysis_scores}. Analysis was performed using Decision tree (C4.5) algorithm, 
 
 Analysis was performed using the Decision tree (C4.5) algorithm, K-Nearest Neighbor (with different distance calculation algorithms, given in the table) and Random prediction, to compare the quality of recommendations. Although the correlation between F1 score and RMSE was not perfect all the time, the general trend is quite similar. Additionally, there is a correlation between 3 categories and 10 categories diving. RMSE values for 3 categories are about 4.4 times better, while F1 scores are only 2.5 times better. Interesting, that for Random prediction the improvement for both category types is similar (3.5 and 3.6 times respectively). Thanks to these patterns, it can be determined that F1 Score for this dataset better visualizes the actual predictive performance.
 
-Due to the analysis, KNN with Manhattan distance showed the best predictive result for the used dataset. However, the difference between KNN with Manhattan distance, Decision tree and KNN with Hellinger distance is smaller than 1%, therefore all three methods have similar performance. KNN with Euclidean and Levenshtein distances have slightly smaller scores, but the difference with Manhattan distance is less than 4%. Angular (the improvement of cosine similarity) and Chebyshev distances have 10% lower prediction performance, compared to Manhattan distance. Therefore, the use of these distances are not recommended with the used dataset. KNN with Minkowski distance have smaller results compared to random prediction, thus the use of this distance on this dataset is not recommended.
+Due to the analysis, KNN with Manhattan distance showed the best predictive result for the used dataset. However, the difference between KNN with Manhattan distance, Decision tree and KNN with Hellinger distance is smaller than 1\%, therefore all three methods have similar performance. KNN with Euclidean and Levenshtein distances have slightly smaller scores, but the difference with Manhattan distance is less than 4\%. Angular (the improvement of cosine similarity) and Chebyshev distances have 10\% lower prediction performance, compared to Manhattan distance. Therefore, the use of these distances are not recommended with the used dataset. KNN with Minkowski distance have smaller results compared to random prediction, thus the use of this distance on this dataset is not recommended.
 
 All algorithms besides KNN with Minkowski distance have significantly better results than random prediction. Therefore, they can be used for a recommendation system for this dataset.
 
@@ -56,7 +56,7 @@ All algorithms besides KNN with Minkowski distance have significantly better res
         \hline
     \end{tabular}
     }
-    \caption{F1 Score and RMSE Results}\label{tab:analysis_scores}
+    \caption{F1 Score and RMSE results}\label{tab:analysis_scores}
 \end{table}
 
 The second necessary aspect of algorithms is time required for building the model (decision tree or matrix) and prediction results (recommendation time). The values of these aspects are illustrated in Table \ref{tab:analysis_performence}. To analyse performance we shouldn't compare actual values (seconds, milliseconds), but the difference of required time to each algorithm. The actual time depends on hardware capabilities and would be different in each application. Therefore we will measure the time in “abstract units”.
